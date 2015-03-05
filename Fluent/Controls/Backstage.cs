@@ -374,7 +374,10 @@ namespace Fluent
                 return;
             }
 
-            this.adorner = new BackstageAdorner(topLevelElement, this);
+            this.adorner = new BackstageAdorner(topLevelElement, this)
+            {
+                DataContext = this.DataContext
+            };
 
             var layer = AdornerLayer.GetAdornerLayer(this);
             layer.Add(this.adorner);
